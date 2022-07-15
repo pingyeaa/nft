@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: '微软雅黑';
+            src: url("./fonts/yahei.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            width: 800px;
+            margin: 20px;
+            margin-top: 30px;
+            height: 350px;
+            color: black;
+            font-family: "微软雅黑";
+            background-color: #151722;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            float: left;
+            height: 40px;
+            list-style: none;
+            line-height: 40px;
+            text-align: center;
+            width: 60px;
+            border-right: solid 1px #cbcbcb;
+        }
+
+        .clear {
+            clear: left;
+        }
+
+        .watermark {
+            width: 280px;
+            color: white;
+            pointer-events: none;
+            display: inline-block;
+            font-size: 22px;
+            position: absolute;
+            font-weight: bold;
+            opacity: 0.2;
+            left: 550px;
+            top: 30px;
+        }
+
+        .statistic {
+            width: 246.5px;
+            line-height: 50px;
+            background-color: #272B3F;
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .whole-line {
+            height: 60px;
+            width: 760px;
+            line-height: 60px;
+            background-color: #272B3F;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .percent {
+            font-size: 12px;
+        }
+
+        .green {
+            color: #7EE490;
+        }
+
+        .red {
+            color: #EB7476;
+        }
+
+        .multi-line {
+            line-height: 20px;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+<span class="watermark">Twitter: @Buffybub</span>
+<div style="margin-bottom: 15px;">
+    <label style="font-size: 26px; font-weight: bold; color: #EB7476;">{name}</label>
+    <label style="font-size: 16px; color: gray;">&nbsp;&nbsp;{time}</label>
+</div>
+<div class="statistic whole-line">
+    <label style="font-size: 16px; font-weight: bold;">交易金额 {total_volume}</label>
+    <label class="percent">&nbsp;{total_volume_rate}</label>
+</div>
+<div class="clear"></div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{count}</label><br>
+    <label class="percent">发售总数</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{floor_price}</label><br>
+    <label class="percent">地板价</label>
+    <label class="percent"> {floor_price_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{holders}</label><br>
+    <label class="percent">持有人数</label>
+    <label class="percent red"> {holders_rate}</label>
+</div>
+
+<div class="clear"></div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{total_sales}</label><br>
+    <label class="percent">交易总数</label>
+    <label class="percent red"> {total_sales_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{avg_price}</label><br>
+    <label class="percent">交易均价</label>
+    <label class="percent red"> {avg_price_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{market_cap}</label><br>
+    <label class="percent">市值</label>
+    <label class="percent red"> {market_cap_rate}</label>
+</div>
+
+<div class="clear"></div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{one_day_volume}</label><br>
+    <label class="percent">1天交易额</label>
+    <label class="percent red"> {one_day_volume_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{one_day_sales}</label><br>
+    <label class="percent">1天交易数</label>
+    <label class="percent red"> {one_day_sales_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{one_day_avg}</label><br>
+    <label class="percent">1天交易均价</label>
+    <label class="percent red"> {one_day_avg_rate}</label>
+</div>
+
+<div class="clear"></div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{thirty_day_volume}</label><br>
+    <label class="percent">3天交易额</label>
+    <label class="percent red"> {thirty_day_volume_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{thirty_day_sales}</label><br>
+    <label class="percent">3天交易数</label>
+    <label class="percent red"> {thirty_day_sales_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{thirty_day_avg}</label><br>
+    <label class="percent">3天交易均价</label>
+    <label class="percent red"> {thirty_day_avg_rate}</label>
+</div>
+
+<div class="clear"></div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{seven_day_volume}</label><br>
+    <label class="percent">7天交易额</label>
+    <label class="percent red"> {seven_day_volume_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{seven_day_sales}</label><br>
+    <label class="percent">7天交易数</label>
+    <label class="percent red"> {seven_day_sales_rate}</label>
+</div>
+<div class="statistic multi-line" style="float: left;">
+    <label style="font-size: 18px; font-weight: bold;">{seven_day_avg}</label><br>
+    <label class="percent">7天交易均价</label>
+    <label class="percent red"> {seven_day_avg_rate}</label>
+</div>
+<div style="margin-bottom: 10px;"> &nbsp;</div>
+<div style="margin-bottom: 10px;"> &nbsp;</div>
+<br>
+<br>
+<br>
+
+</body>
+</html>
