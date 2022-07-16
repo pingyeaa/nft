@@ -96,6 +96,6 @@ func main() {
 			log.Println(err.Error())
 		}
 
-		time.Sleep(time.Minute * 10)
+		time.Sleep(time.Hour * 12)
 	}
 }
